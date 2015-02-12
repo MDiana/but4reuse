@@ -12,6 +12,7 @@ import org.but4reuse.adaptedmodel.BlockElement;
 import org.but4reuse.adaptedmodel.ElementWrapper;
 import org.but4reuse.adapters.IDependencyObject;
 import org.but4reuse.adapters.IElement;
+import org.but4reuse.adapters.eclipse.PluginElement;
 import org.but4reuse.feature.constraints.IConstraintsDiscovery;
 import org.but4reuse.featurelist.FeatureList;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -183,6 +184,60 @@ public class BinaryRelationConstraintsDiscovery implements IConstraintsDiscovery
 			}
 		}
 		return result;
+	}
+
+	// Non functional yet
+	public static List<Block> getAllDependencies(Block block, List<Block> list) {
+
+
+		List<BlockElement> blockElementList = block.getOwnedBlockElements();
+		List<Block> result = new ArrayList<Block>();
+		boolean blockdepend;
+		for(Block current : list) {
+			blockdepend = false;
+
+
+			for (BlockElement blockElement : blockElementList) {
+				for (BlockElement currentBlock : current.getOwnedBlockElements()) {
+
+					if((currentBlock instanceof PluginElement) &&
+							(blockElement instanceof PluginElement)) {
+
+						String blockElementStr = ((PluginElement)blockElement).getPluginSymbName();
+						String currentBlockStr = ((PluginElement)currentBlock).getPluginSymbName();
+						if(blockElementStr.equals(currentBlockStr)) {
+							result.add(current);
+							blockdepend = true;
+							break;
+						}
+					}
+				}
+				if(blockdepend){ break; }
+			}
+			/*
+				for (BlockElement blockElement : block.getOwnedBlockElements()){
+					IElement element = (IElement)blockElement.getElementWrappers().get(0).getElement();
+					sText = sText + element.getText() + "\n";
+
+				}*/
+		}
+
+
+		/*List<IDependencyObject> result = new ArrayList<IDependencyObject>();
+			for (ElementWrapper elementW1 : blockElement.getElementWrappers()) {
+				IElement element = (IElement) elementW1.getElement();
+				Map<String, List<IDependencyObject>> map = element.getDependencies();
+				for (String key : map.keySet()) {
+					List<IDependencyObject> dependencies = map.get(key);
+					for (IDependencyObject o : dependencies) {
+						if (!result.contains(o)) {
+							result.add(o);
+						}
+					}
+				}
+			}*/
+		return result;
+
 	}
 
 }
