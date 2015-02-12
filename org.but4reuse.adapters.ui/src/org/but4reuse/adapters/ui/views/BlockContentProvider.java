@@ -1,13 +1,8 @@
 package org.but4reuse.adapters.ui.views;
 
 import java.util.List;
-import java.util.Map;
 
 import org.but4reuse.adaptedmodel.Block;
-import org.but4reuse.adaptedmodel.BlockElement;
-import org.but4reuse.adapters.IDependencyObject;
-import org.but4reuse.adapters.eclipse.PluginElement;
-import org.but4reuse.adapters.impl.AbstractElement;
 import org.but4reuse.feature.constraints.impl.BinaryRelationConstraintsDiscovery;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.zest.core.viewers.IGraphEntityContentProvider;

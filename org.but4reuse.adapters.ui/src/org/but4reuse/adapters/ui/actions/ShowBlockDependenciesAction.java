@@ -4,13 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.but4reuse.adaptedmodel.Block;
-import org.but4reuse.adaptedmodel.BlockElement;
-import org.but4reuse.adapters.IElement;
 import org.but4reuse.adapters.ui.views.BlockContentProvider;
 import org.but4reuse.adapters.ui.views.BlockLabelProvider;
-import org.but4reuse.adapters.ui.views.PluginContentProvider;
-import org.but4reuse.adapters.ui.views.PluginLabelProvider;
-import org.but4reuse.utils.ui.dialogs.ScrollableMessageDialog;
 import org.but4reuse.visualisation.visualiser.adaptedmodel.BlockElementsMarkupProvider;
 import org.but4reuse.visualisation.visualiser.adaptedmodel.BlockElementsOnArtefactsVisualisation;
 import org.but4reuse.visualisation.visualiser.adaptedmodel.BlockMarkupKind;
