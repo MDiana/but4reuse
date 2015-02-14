@@ -11,4 +11,4 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.core.resources
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
-Import-Package: org.but4reuse.adapters.filestructure;resolution:=optional
+Export-Package: org.but4reuse.adapters.eclipse

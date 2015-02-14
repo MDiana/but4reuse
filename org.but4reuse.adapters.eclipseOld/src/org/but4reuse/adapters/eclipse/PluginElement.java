@@ -1,9 +1,8 @@
 package org.but4reuse.adapters.eclipse;
 
 import java.util.ArrayList;
-import org.but4reuse.adapters.activator.*;
-import org.but4reuse.adapters.IElement;
 
+import org.but4reuse.adapters.IElement;
 import org.but4reuse.adapters.impl.AbstractElement;
 
 
@@ -12,7 +11,7 @@ import org.but4reuse.adapters.impl.AbstractElement;
  * @author Diana MALABARD
  * @author Jason CHUMMUN
  */
-public class PluginElement extends AbstractElement {
+public class PluginElement extends AbstractElement{
 
 	private String pluginSymbName;
 	private String pluginName;
